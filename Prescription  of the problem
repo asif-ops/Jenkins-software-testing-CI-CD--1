@@ -6,3 +6,10 @@ Continuous Integration tool Jenkins is here being to rescuer from this problem a
 3.	a Docker container is created that will automatically configure itself as a test web-server and clone the desired version of the code from the git server and install it.
 4.	An script will check that the web server is working and look for a particular text in the web-page.
 5.	If the test is successful then it will send an email notification to user regarding test success message and vice versa  to user, beside;  if test success then it will deploy a docker container that will configure itself as a production web-server and deploy the latest correct version of the code. 
+
+Solution Key point:
+Maintain a GIT code repository. 
+Scheduling Jenkins Build where Jenkins can monitor the repository and start a build whenever any changes have been committed by choosing Poll SCM option and entering syntax of cron.
+Once build start it will create docker container and apply web application according to pushed code. 
+ Script will check web application running status and check for a particular text “Hello World” in the webpage, if test success then it will send an email to user and perform automatic Deployment to production by using docker container and if test failed it will send a email notification to user. 
+The test will be consider as failed is test script find any other extra word instead of “Hello World” as an example “<<Hello World>>”. 

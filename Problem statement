@@ -1,0 +1,7 @@
+Problem statement:
+A web-design company called StarFleet Design who build website for other companies. They have all the web-pages are on a local gitlab server. They have one git repository per site. They also have one web-server per site, running in their own OpenStack cloud. Their current workflow for modifying a web-page for a customer is like this:
+1.	 Check out the latest version from the git server
+2.	Modify the HTML pages
+3.	When all the changes are made, use git to add a new tag for the new version (they don’t use semantic versioning, but only v1, v2, v3 etc)
+4.	Commit and push the changes to the git server
+5.	Log in to the particular web-server which runs the site in production and go to the folder serving the HTML files. Pull the latest tag.

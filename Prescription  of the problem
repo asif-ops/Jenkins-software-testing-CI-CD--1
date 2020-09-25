@@ -1,0 +1,8 @@
+Prescription:
+Continuous Integration tool Jenkins is here being to rescuer from this problem and for the testing and production infrastructure containerization technologies i.e Docker being used.  High level steps is given below which would be suffice to solve the problem - 
+ 
+1.	Modified the webpage (index.html) and push the latest webpage to git server.
+2.	Jenkins periodically pulls the project’s source code from the remote Git Server and do start build job as below if there is any change in source code repository.  
+3.	a Docker container is created that will automatically configure itself as a test web-server and clone the desired version of the code from the git server and install it.
+4.	An script will check that the web server is working and look for a particular text in the web-page.
+5.	If the test is successful then it will send an email notification to user regarding test success message and vice versa  to user, beside;  if test success then it will deploy a docker container that will configure itself as a production web-server and deploy the latest correct version of the code. 
